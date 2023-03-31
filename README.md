@@ -14,8 +14,8 @@ bool private inSwapAndLiquify;
 
 3. Missing events arithmetic
 
-event ExcludedFromFeeUpdated(address _addr, bool excluded);
-event FeeBetweenWalletsUpdated(bool excluded);
+    event ExcludedFromFeeUpdated(address _addr, bool excluded);
+    event FeeBetweenWalletsUpdated(bool excluded);
 
     function excludeFromFee(address account) public onlyOwner {
         _isExcludedFromFee[account] = true;
