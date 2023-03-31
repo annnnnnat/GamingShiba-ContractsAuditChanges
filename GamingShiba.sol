@@ -925,7 +925,6 @@ contract GamingShibaContract is Context, IERC20, Ownable, Initializable {
             }
         }
 
-        //transfer amount, it will take tax, burn, liquidity fee
         _tokenTransfer(from, to, amount, tierIndex, takeFee);
     }
 
