@@ -17,7 +17,7 @@ bool private inSwapAndLiquify;
 event ExcludedFromFeeUpdated(address _addr, bool excluded);
 event FeeBetweenWalletsUpdated(bool excluded);
 
-function excludeFromFee(address account) public onlyOwner {
+    function excludeFromFee(address account) public onlyOwner {
         _isExcludedFromFee[account] = true;
         emit ExcludedFromFeeUpdated(account, true);
     }
@@ -36,7 +36,7 @@ function excludeFromFee(address account) public onlyOwner {
 
 Added local valirables _temp and Alength
 
-function includeInReward(address account) external onlyOwner {
+    function includeInReward(address account) external onlyOwner {
         require(_isExcluded[account], "Account is already included");
         address[] storage _temp = _excluded;
         uint256 Alength = _temp.length;
@@ -56,7 +56,8 @@ function includeInReward(address account) external onlyOwner {
 
 Removing SafeMath
 5.1 transferFrom changed
-function _spendAllowance(address owner, address spender, uint256 amount) internal virtual {
+    
+    function _spendAllowance(address owner, address spender, uint256 amount) internal virtual {
         uint256 currentAllowance = allowance(owner, spender);
         if (currentAllowance != type(uint256).max) {
             require(currentAllowance >= amount, "ERC20: insufficient allowance");
@@ -76,9 +77,10 @@ function _spendAllowance(address owner, address spender, uint256 amount) interna
         _transfer(from, to, amount);
         return true;
     }
+    
 5.2 decreaseAllowence changed
 
-function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
+    function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
         address owner = _msgSender();
         uint256 currentAllowance = allowance(owner, spender);
         require(currentAllowance >= subtractedValue, "ERC20: decreased allowance below zero");
@@ -88,6 +90,7 @@ function decreaseAllowance(address spender, uint256 subtractedValue) public virt
 
         return true;
     }
+
 5.3
 add() changed to +
 div() changed to /
@@ -96,9 +99,7 @@ sub() changed to -
 
 6. Inital Supply //
 
-
-
 7.Reliance on third-parties
 
-Third-parties can be modified by the owner in intentions to keep the token safe.
+Third-parties can be modified by the Owner in intentions to keep the token safe.
 
