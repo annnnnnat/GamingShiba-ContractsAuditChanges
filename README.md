@@ -98,7 +98,8 @@ div() changed to /
 mul() changed to *
 sub() changed to -
 
-6. Inital Supply //
+6. Inital Supply
+Owner will disctribute the tokens to the contracts as followed by the tokenomics.
 
 7.Reliance on third-parties
 
